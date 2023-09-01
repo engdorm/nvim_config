@@ -12,7 +12,6 @@ return require('packer').startup(function(use)
 
   -- Lazy loading:
   -- Load on specific commands
-  use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
   use {
   "folke/which-key.nvim",
   config = function()
@@ -25,9 +24,15 @@ return require('packer').startup(function(use)
     }
   end
 }
+  use {
+    'andymass/vim-matchup',
+    setup = function()
+      -- may set any options here
+      vim.g.matchup_matchparen_offscreen = { method = "popup" }
+    end
+  }
 
-  -- Load on an autocommand event
-  use {'andymass/vim-matchup', event = 'VimEnter'}
+
   use 'mortepau/codicons.nvim'
 
   -- Load on a combination of conditions: specific filetypes or commands
@@ -114,7 +119,7 @@ return require('packer').startup(function(use)
       config = function() require('aerial').setup() end
   }
   -- You can specify multiple plugins in a single call
-  use {'tjdevries/colorbuddy.vim', {'nvim-treesitter/nvim-treesitter', opt = true}}
+  use {'tjdevries/colorbuddy.vim', requires = {'nvim-treesitter/nvim-treesitter'}}
 
   use "terrortylor/nvim-comment"
   use "eandrju/cellular-automaton.nvim"
@@ -123,6 +128,7 @@ return require('packer').startup(function(use)
   use 'mfussenegger/nvim-dap-python'
   use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
   use 'nvim-tree/nvim-web-devicons'
+  use "EdenEast/nightfox.nvim" 
 
   use {
   'pwntester/octo.nvim',
@@ -135,6 +141,8 @@ return require('packer').startup(function(use)
     require"octo".setup()
   end
 }
+use{'stevearc/gkeep.nvim', run = ':UpdateRemotePlugins'}
+
 
 use {
     'ldelossa/gh.nvim',
@@ -142,4 +150,5 @@ use {
   }
   -- You can alias plugin names
   use {'dracula/vim', as = 'dracula'}
+  use {'epwalsh/obsidian.nvim', requires = {'nvim-lua/plenary.nvim'}}
 end)

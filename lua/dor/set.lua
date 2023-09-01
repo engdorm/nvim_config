@@ -20,6 +20,8 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
+vim.g.netrw_liststyle = 3
+vim.g.netrw_winsize = 15
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"

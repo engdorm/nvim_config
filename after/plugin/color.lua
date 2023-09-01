@@ -1,5 +1,14 @@
 require('rose-pine').setup({
-    disable_background = true
+    disable_background = true,
+    options = {
+        groups = {
+            all = {
+              GitSignsAddNr = { fg = "#26A07A" },
+              GitSignsDeleteNr = { fg = "#E87D7D" },
+              GitSignsChangeNr = { fg = "#AD991F" },
+          },
+      },
+    },
 })
 
 function ColorMyPencils(color) 

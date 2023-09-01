@@ -1,12 +1,14 @@
-local lsp = require("lsp-zero")
+require("mason").setup()
+require("mason-lspconfig").setup()
+require"lspconfig".marksman.setup{}
+
+local lsp = require("lsp-zero").preset({})
 
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-	'tsserver',
 	'eslint',
 	'lua_ls',
-	'rust_analyzer',
 })
 
 -- Fix Undefined global 'vim'
@@ -86,7 +88,7 @@ lsp.on_attach(function(client, bufnr)
 
     -- See `:help K` for why this keymap
     nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-    nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+    nmap('<M-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
     -- Lesser used LSP functionality
     nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
@@ -110,5 +112,12 @@ lsp.setup()
 
 vim.diagnostic.config({
 	virtual_text = true,
+})
+
+local wk = require("which-key")
+wk.register({
+  ["<leader>f"] = {name = "find"},
+  ["<leader>c"] = {name = "comment/code_action"},
+  ["<leader>p"] = {name = "project"}
 })
 
