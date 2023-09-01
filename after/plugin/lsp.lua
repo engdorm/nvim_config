@@ -117,6 +117,7 @@ vim.diagnostic.config({
 local wk = require("which-key")
 wk.register({
   ["<leader>f"] = {name = "find"},
+  ["<leader>d"] = {name = "Debug - DAP"},
   ["<leader>c"] = {name = "comment/code_action"},
   ["<leader>p"] = {name = "project"}
 })

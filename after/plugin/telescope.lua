@@ -30,7 +30,7 @@ port = 1
 
 vim.keymap.set('n', '<leader>ft', require('telescope.builtin').treesitter, { desc = '[t] Find treesitter' })
 vim.keymap.set('n', '<leader>fc', require('telescope.builtin').commands, { desc = '[c] Find commands' })
-vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostic, { desc = '[d] Find diagnostics' })
+vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { desc = '[d] Find diagnostics' })
 vim.keymap.set('n', '<leader>fb', require('telescope.builtin').lsp_document_symbols, { desc = '[b] Find buffer symbols' })
 vim.keymap.set('n', '<leader>fk', require('telescope.builtin').keymaps, { desc = '[k] Find keymaps' })
 vim.keymap.set('n', '<leader>fp', require('telescope.builtin').spell_suggest, { desc = '[P] Find sPell_suggest' })
