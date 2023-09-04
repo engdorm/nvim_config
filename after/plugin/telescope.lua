@@ -34,6 +34,7 @@ vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('n', '<leader>fb', require('telescope.builtin').lsp_document_symbols, { desc = '[b] Find buffer symbols' })
 vim.keymap.set('n', '<leader>fk', require('telescope.builtin').keymaps, { desc = '[k] Find keymaps' })
 vim.keymap.set('n', '<leader>fp', require('telescope.builtin').spell_suggest, { desc = '[P] Find sPell_suggest' })
+vim.keymap.set('n', '<leader>fo', require('telescope.builtin').oldfiles, { desc = '[o] Find oldfiles' })
 vim.keymap.set('n', '<leader>fj', require('telescope.builtin').jumplist, { desc = '[j] Find jumps' })
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').keymaps, { desc = '[?] Find keymaps ' })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[space] Find buffers' })
