@@ -9,6 +9,7 @@ return require('packer').startup(function(use)
 
     -- Simple plugins can be specified as strings
     use 'rstacruz/vim-closer'
+    use { 'm00qek/baleia.nvim', tag = 'v1.3.0',}
 
     -- Lazy loading:
     -- Load on specific commands
@@ -54,8 +55,7 @@ return require('packer').startup(function(use)
     }
 
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        -- or                            , branch = '0.1.x',
+        'nvim-telescope/telescope.nvim' , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
     use 'tjdevries/apyrori.nvim'
@@ -140,6 +140,13 @@ return require('packer').startup(function(use)
     use 'kristijanhusak/vim-dadbod-ui'
     use 'kristijanhusak/vim-dadbod-completion'
     -- use 'kristijanhusak/vim-dadbod-explorer'
+    -- Tmux
+    use {
+        'numToStr/Navigator.nvim',
+        config = function()
+            require('Navigator').setup()
+        end
+    }
 
 
     -- use {

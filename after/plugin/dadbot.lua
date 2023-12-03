@@ -1,7 +1,7 @@
 vim.keymap.set('n', '<leader>rf', function()
     if os.getenv("REDIS_MASTER_HOST") == nil
         then
-            vim.cmd(':e! keys | :read ! docker exec -t redis-master-tugbot_24081-movai bash -c "redis-cli KEYS *Callback*"')
+            vim.cmd(':e! keys | :read ! docker exec -t redis-master-sim_24100-movai bash -c "redis-cli KEYS *Callback*"')
         else
             vim.cmd("DB redis://$REDIS_MASTER_HOST:$REDIS_MASTER_PORT KEYS *Callback*" )
 

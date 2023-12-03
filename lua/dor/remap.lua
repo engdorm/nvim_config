@@ -25,17 +25,17 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "zq", "<cmd>bd<CR>")
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set("n", "zq", "<cmd>bd<CR>", {desc = "Close buffer"})
+vim.keymap.set("n", "<leader><C-f>", vim.lsp.buf.format, {desc = "Format"})
 
 -- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<leader>J", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>K", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>t", "<cmd> vsplit term://bash<CR>")
+vim.keymap.set("n", "<leader>J", "<cmd>cprev<CR>zz", {desc = "Prev quickfix"})
+vim.keymap.set("n", "<leader>K", "<cmd>cnext<CR>zz", {desc = "Next quickfix"})
+vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", {desc = "Prev local fix"})
+vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", {desc = "Next local fix"})
+vim.keymap.set("n", "<leader>t", "<cmd> vsplit term://bash<CR>", {desc = "Terminal"})
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {desc = "Substitute"})
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 
