@@ -6,7 +6,7 @@ dirs = {spawner="/home/dor/ws/flow-initiator/flow_initiator",
          backend="/home/dor/ws/backend/backend/",
          dal="/home/dor/ws/data-access-layer/dal/"}
 vim.keymap.set('n', '<leader>pf', function()
-    builtin.find_files( { search_dirs = dirs})
+    builtin.find_files( { cwd="/home/dor/ws/", search_dirs = dirs})
 end, { desc = '[f] Find files' })
 vim.keymap.set('n', '<leader>pm', function()
     builtin.grep_string( { cwd="/home/dor/ws/" , grep_open_files=false, search_dirs=dirs,
@@ -23,9 +23,7 @@ vim.keymap.set('n', '<leader>fs', function()
     builtin.grep_string({ search = vim.fn.input("Grep > ") });
 end, { desc = '[s] Grep string' })
 ws="/home/dor/ws/"
-vim.keymap.set('n', '<leader>fm', function()
-    builtin.grep_string({search_dirs = dirs,   vim.fn.input("Grep Movai> ")});
-end, { desc = '[m] Movai grep' })
+vim.keymap.set('n', '<leader>fm', "<cmd>CellularAutomaton make_it_rain<CR>", { desc = '[m] Fuck My L' })
 port = 1
 
 vim.keymap.set('n', '<leader>ft', require('telescope.builtin').treesitter, { desc = '[t] Find treesitter' })

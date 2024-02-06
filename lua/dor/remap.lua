@@ -39,7 +39,7 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 
-vim.keymap.set("n", "<C-H>", "<C-W>h")
+vim.keymap.set("n", "<C-h>", "<C-W>h")
 vim.keymap.set('t', '<C-h>', '<C-\\><C-N><C-w>h')
 vim.keymap.set('t', '<C-j>', '<C-\\><C-N><C-w>j')
 vim.keymap.set('t', '<C-k>', '<C-\\><C-N><C-w>k')
@@ -49,6 +49,6 @@ vim.keymap.set('i', '<C-h>', '<C-\\><C-N><C-w>h')
 vim.keymap.set('i', '<C-j>', '<C-\\><C-N><C-w>j')
 vim.keymap.set('i', '<C-k>', '<C-\\><C-N><C-w>k')
 vim.keymap.set('i', '<C-l>', '<C-\\><C-N><C-w>l')
-vim.keymap.set("n", "<C-J>", "<C-W>j")
+vim.keymap.set("n", "<C-j>", "<C-W>j")
 vim.keymap.set("n", "<C-k>", "<C-W>k")
-vim.keymap.set("n", "<C-L>", "<C-W>l")
+vim.keymap.set("n", "<C-l>", "<C-W>l")
