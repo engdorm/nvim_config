@@ -210,8 +210,9 @@ local wk = require("which-key")
 wk.register({
   ["<leader>f"] = {name = "find"},
   ["<leader>d"] = {name = "Debug - DAP"},
-  ["<leader>co"] = {name = "Color Output from terminal"},
+  -- ["<leader>co"] = {name = "Color Output from terminal"},
   ["<leader>c"] = {name = "comment/code_action"},
+  -- ["<leader>co"] = {name = "color terminal"},
   ["<leader>a"] = {name = "harpoon"},
   ["<leader>p"] = {name = "project"}
 })

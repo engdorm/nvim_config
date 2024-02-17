@@ -5,3 +5,12 @@ command! BaleiaColorize call s:baleia.once(bufnr('%'))
 nnoremap <leader>co :BaleiaColorize<CR>
 ]])
 
+local wk = require("which-key")
+wk.register({
+    c = {
+        name = "colr/comment/caction",
+        o = {
+            name = "color output from the terminal",
+        }
+    }
+})
