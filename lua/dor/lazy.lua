@@ -81,13 +81,13 @@ local plugins = {
     --   lazy = true,
     --   dependencies = {{'hrsh7th/vim-vsnip', lazy = true}, {'hrsh7th/vim-vsnip-integ', lazy = true}}
     -- }
-    {
-        "ray-x/lsp_signature.nvim",
-        event = "VeryLazy",
-        config = function()
-            require("lsp_signature").setup()
-        end,
-    },
+    -- {
+    --     "ray-x/lsp_signature.nvim",
+    --     event = "VeryLazy",
+    --     config = function()
+    --         require("lsp_signature").setup()
+    --     end,
+    -- },
 
     {
         'nvim-telescope/telescope.nvim', branch = '0.1.x',

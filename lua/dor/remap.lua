@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Vex, {desc = "Vex"})
+vim.keymap.set("n", "<leader>pe", vim.cmd.Lex, {desc = "Ex"})
 vim.keymap.set("n", "<leader>pl", vim.cmd.Lex, {desc = "Lex"})
 vim.keymap.set("n", "<leader>pt", vim.cmd.difft, {desc = "diff this"})
 

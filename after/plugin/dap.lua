@@ -1,4 +1,22 @@
 local dap =  require('dap')
+dap.adapters["pwa-node"] = {
+  type = "server",
+  host = "localhost",
+  port = "${port}",
+  executable = {
+    command = "node",
+    args = {"/home/dor/.local/share/nvim/js-debug/src/dapDebugServer.js", "${port}"},
+  }
+}
+dap.configurations.javascript = {
+  {
+    type = "pwa-node",
+    request = "launch",
+    name = "Launch file",
+    program = "${file}",
+    cwd = "${workspaceFolder}",
+  },
+}
 dap.configurations.python3 = {
     {
         type = 'python';
@@ -6,6 +24,12 @@ dap.configurations.python3 = {
         module = 'flow_initiator';
         name = 'flow1';
     },
+}
+dap.adapters.chrome = {
+  type = 'executable';
+  command = 'node';
+
+  args = {os.getenv('HOME') ..  '/.local/share/nvim/mason/packages/chrome-debug-adapter/out/src/chromeDebug.js'};
 }
 local  dapui =  require("dapui")
 dap.listeners.after.event_initialized["dapui_config"] = function()
@@ -25,6 +49,18 @@ table.insert(require('dap').configurations.python, {
   module= 'flow_initiator',
   -- ... more options, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings
 })
+dap.configurations.typescript = {
+  {
+    type = 'chrome',
+    request = 'attach',
+    program = '${file}',
+    cwd = vim.fn.getcwd(),
+    sourceMaps = true,
+    port = 9222,
+    webRoot = "${workspaceFolder}",
+    protocol = 'inspector',
+  },
+}
 require('dap.ext.vscode').load_launchjs("/opt/mov.ai/app/.vscode/launch.json")
 require("dapui").setup({
     controls = {
