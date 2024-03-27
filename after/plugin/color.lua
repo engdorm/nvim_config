@@ -1,5 +1,9 @@
 require('rose-pine').setup({
     disable_background = true,
+    styles = {
+        comments = "italic",
+        transparency = true,
+    },
     options = {
         groups = {
             all = {
@@ -9,6 +13,9 @@ require('rose-pine').setup({
           },
       },
     },
+    highlight_groups = {
+        VertSplit = { fg = "muted", bg = "none" },
+    }
 })
 
 function ColorMyPencils(color) 

@@ -97,6 +97,20 @@ local plugins = {
 
     -- Plugins can have post-install/update hooks
     { 'iamcco/markdown-preview.nvim', build = 'cd app && yarn install', cmd = 'MarkdownPreview' },
+    { 'alexghergh/nvim-tmux-navigation', config = function()
+        require 'nvim-tmux-navigation'.setup {
+            disable_when_zoomed = true, -- defaults to false
+            keybindings = {
+                left = "<C-h>",
+                down = "<C-j>",
+                up = "<C-k>",
+                right = "<C-l>",
+                last_active = "<C-\\>",
+                -- next = "<C-Space>",
+            }
+        }
+    end
+    },
 
     -- Post-install/update hook with neovim command
     { 'nvim-treesitter/nvim-treesitter',
@@ -137,8 +151,30 @@ local plugins = {
     {
         'rose-pine/neovim',
         name = 'rose-pine',
+        -- config = function()
+        --     vim.cmd('colorscheme rose-pine')
+        -- end
+    },
+    {
+        "folke/tokyonight.nvim",
+        name = "tokyonight",
+        lazy = false,
+        priority = 1000,
+        opts = {
+            transparent = true,
+            styles = {
+                comments = "italic",
+                functions = "italic",
+                keywords = "italic",
+                strings = "italic",
+                variables = "italic",
+                sidebars = "transparent",
+                floats = "transparent",
+
+            },
+        },
         config = function()
-            vim.cmd('colorscheme rose-pine')
+            vim.cmd('colorscheme tokyonight-night')
         end
     },
     -- Use dependency and build lua function after load
@@ -163,10 +199,15 @@ local plugins = {
     -- "terrortylor/nvim-comment",
     "eandrju/cellular-automaton.nvim",
     "is0n/jaq-nvim",
+    { "nvim-neotest/nvim-nio",  event = "VeryLazy",},
     -- Debugs stuff:
     'mfussenegger/nvim-dap',
     'mfussenegger/nvim-dap-python',
-    { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap" } },
+    { "rcarriga/nvim-dap-ui",
+        dependencies = { "mfussenegger/nvim-dap", "nvim-neotes/nvim-nio" },
+        event = "VeryLazy",
+        -- lazy = true,
+    },
     'theHamsta/nvim-dap-virtual-text',
     'nvim-telescope/telescope-dap.nvim',
     -- Colorschemes
